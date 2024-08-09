@@ -2,7 +2,7 @@
   "name": "theprogressbar",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.2",
+    "node": "^20.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

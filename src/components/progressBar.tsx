@@ -1,32 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 function ProgressBar(){
 
-    const backgroundColors =['red','yellow','green'];
-
     const [value, setValue] = useState(0);
-    const [background, setBackground] = useState(0);
-
     
     return (
        <div className='barBlock'>
 
-        <button className='barButtons' onClick={()=>{
-            if (value > 0){setValue(val=>val-1)}
+        <button className='barButtons' id = 'decrementButton'onClick={()=>{
+            if (value === 1){
+                document.getElementById('decrementButton').disabled=true
+                }
+                console.log(value,'this is before the hook')
+            setValue(val=>val-1);
+            console.log(value,'this is after the Hook')
+
             }}>-</button>
 
 
-        <div className="progressBar" style={{backgroundColor:`${backgroundColors[background]}`}}>
+        <div className="progressBar">
             {value}%
         </div>
 
-        <button className='barButtons'onClick={()=>{setValue(val=>val+1)
-              if (value=== 0 || value === 1){setBackground(bg=>bg+1,
-              )
-              
-            }
-            }
+        <button className='barButtons'onClick={()=>{setValue(val=>val+1)}
         }>+</button>
         </div> 
     )
