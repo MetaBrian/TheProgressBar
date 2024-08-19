@@ -18,7 +18,7 @@ mongoose.connect(URI)
         console.log(err)
     });
 
-app.get('/', async(req, res, next) => {
+app.get('/getBars', async(req, res, next) => {
     try {
         const bars = await Bar.find({});
         await res.json(bars)
@@ -26,3 +26,29 @@ app.get('/', async(req, res, next) => {
     catch(err){return next (err)}
 })
 
+app.post('/newBar', async (req, res, next)=>{
+    const {title, startValue, endValue} = req.body;
+
+    try {
+        Bar.create({title:title, startValue:startValue, endValue:endValue})
+    }
+    catch (err){
+        return next(err)
+    }
+
+    })
+
+app.use('*', (err, res) => {
+    const defaultErr = {
+      log: 'Express error handler caught unknown middleware error',
+      status: 400,
+      message: { err: 'An error occurred' },
+    };
+    const errorObj = Object.assign({}, defaultErr, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
+  });
+
+app.listen(8080, () => {
+  console.log(`Server is running on port 8080.`);
+});

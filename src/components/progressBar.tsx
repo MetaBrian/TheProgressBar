@@ -2,7 +2,8 @@ import { useState } from "react";
 
 
 function ProgressBar(){
-
+    
+    // const [title, setTitle] = '';
     const [value, setValue] = useState(0);
     
     return (
@@ -20,7 +21,8 @@ function ProgressBar(){
 
 
         <div className="progressBar">
-            {value}%
+  
+            {/* {value}% */}
         </div>
 
         <button className='barButtons'onClick={()=>{setValue(val=>val+1)}
