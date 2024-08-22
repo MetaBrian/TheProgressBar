@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-
-function ProgressBar(){
-    
-    // const [title, setTitle] = '';
+function ProgressBar(props){
     const [value, setValue] = useState(0);
     
     return (
@@ -20,9 +17,8 @@ function ProgressBar(){
             }}>-</button>
 
 
-        <div className="progressBar">
-  
-            {/* {value}% */}
+        <div className="progressBar" title={props.title}>
+            {props.title}
         </div>
 
         <button className='barButtons'onClick={()=>{setValue(val=>val+1)}

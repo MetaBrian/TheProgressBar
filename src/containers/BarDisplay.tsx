@@ -21,11 +21,12 @@ function BarDisplay(){
   }
   }
 
-  console.log(...bars,'this is effect bars')
 
   const content = [];
   for (let i=0; i<bars.length;i++){
-    const component = <ProgressBar key={bars[i]._id}>{'13'}</ProgressBar>
+    const title = bars[i].title;
+    console.log(title, 'this is title')
+    const component = <ProgressBar key={bars[i]._id} title={title}></ProgressBar>
     content.push(component)
   }
 
