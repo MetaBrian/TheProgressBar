@@ -3,31 +3,67 @@ body {
 }
 
 .barDisplay{
-    height: 80vh;
+    height: 84vh;
     width: 100vw;
     display: flex;
     justify-content: center;
 }
 
-.header{
-    height: 10vh;
+.navBar{
+    height: 8vh;
     width: 100vw;
-    background-color: silver;
+    display: flex;
+    justify-content: space-around;
+    background-color: lime;
+}
+
+.navLinks{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    font-family: 'Permanent Marker', cursive;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.navLinks:hover{
+    background-color: white;
+    color: lime;
 }
 
 .footer{
-    height: 10vh;
+    height: 8vh;
     width: 100vw;
     background-color: lime;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.footerLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    height: 100%;
+    width: 30%;
+}
+
+.footerLinks:hover{
+    background-color: white;
+    cursor: pointer;
+    color: lime;
 }
 
 .progressBar{
     height: 100%;
     width: 70%;
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    color: lime;
 }
 
 .barBlock{
@@ -40,4 +76,36 @@ body {
     width: 15%;
     height: 100%;
     background-color: blue;
+}
+
+.createBars{
+    display: flex;
+justify-content: center;
+    align-items: center;
+    height: 84vh;
+    width: 100vw;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#submitBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 20%;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.createInputs{
+    height: 6vh;
+    width: 10vw;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#barForm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
 }

@@ -17,8 +17,9 @@ function ProgressBar(props){
             }}>-</button>
 
 
-        <div className="progressBar" title={props.title}>
-            {props.title}
+        <div className="progressBar">
+            <h3>{props.title}</h3>
+            <h3>{props.value}</h3>
         </div>
 
         <button className='barButtons'onClick={()=>{setValue(val=>val+1)}

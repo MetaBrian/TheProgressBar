@@ -7,11 +7,11 @@ function NavBar() {
     return (
     
         <div className='navBar'>
-            <Link to='/'>
-                Home
+            <Link to='/' className='navLinks'>
+                <h2>Home</h2>
             </Link>
-            <Link to='/displayBars'>
-                Progress Bars
+            <Link to='/displayBars' className='navLinks'>
+                <h2>Progress Bars</h2>
             </Link>
         </div>
     )
