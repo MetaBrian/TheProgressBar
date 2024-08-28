@@ -25,8 +25,9 @@ function BarDisplay(){
   const content = [];
   for (let i=0; i<bars.length;i++){
     const title = bars[i].title;
-    console.log(bars[i], 'this is content being push')
-    const component = <ProgressBar key={bars[i]._id} title={title} value={bars[i].startValue}></ProgressBar>
+    console.log(bars[i].endValue, 'this is content being push')
+    console.log(bars[i].startValue/bars[i].endValue, 'this is division')
+    const component = <ProgressBar key={bars[i]._id} title={title} startValue={bars[i].startValue} endValue={bars[i].endValue}></ProgressBar>
     content.push(component)
   }
 

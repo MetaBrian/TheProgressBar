@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 function ProgressBar(props){
-    const [value, setValue] = useState(0);
+
+
+    const currentValue = (props.startValue/props.endValue)*100;
+    console.log(currentValue, 'this is division props')
+    const [value, setValue] = useState(currentValue);
     
     return (
        <div className='barBlock'>
@@ -19,7 +23,8 @@ function ProgressBar(props){
 
         <div className="progressBar">
             <h3>{props.title}</h3>
-            <h3>{props.value}</h3>
+            <br/>
+            <h3>{value}%</h3>
         </div>
 
         <button className='barButtons'onClick={()=>{setValue(val=>val+1)}
