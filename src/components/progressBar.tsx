@@ -1,11 +1,11 @@
 import { useState } from "react";
+import incrementor from "../helperFunctions/incrementValue";
 
 function ProgressBar(props){
 
+    let shadowValue = props.startValue
+    const [value, setValue] = useState(shadowValue);
 
-    const currentValue = (props.startValue/props.endValue)*100;
-    console.log(currentValue, 'this is division props')
-    const [value, setValue] = useState(currentValue);
     
     return (
        <div className='barBlock'>
@@ -14,9 +14,9 @@ function ProgressBar(props){
             if (value === 1){
                 document.getElementById('decrementButton').disabled=true
                 }
-                console.log(value,'this is before the hook')
+
             setValue(val=>val-1);
-            console.log(value,'this is after the Hook')
+
 
             }}>-</button>
 
@@ -27,8 +27,8 @@ function ProgressBar(props){
             <h3>{value}%</h3>
         </div>
 
-        <button className='barButtons'onClick={()=>{setValue(val=>val+1)}
-        }>+</button>
+        <button className='barButtons' onClick={()=>{setValue(shadowValue=>shadowValue+=1);
+        }}>+</button>
         </div> 
     )
 }

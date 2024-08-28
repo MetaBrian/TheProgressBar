@@ -37,6 +37,20 @@ app.post('/newBar', async (req, res, next)=>{
     }
 
     })
+    
+    app.post('/incrementBar', async (req, res, next) => {
+        const {_id, incrementedValue }= await req.body
+      
+        try {
+            console.log(incrementedValue, 'this is incremented value')
+          await Bar.updateOne({_id: _id}, { $set: {startValue: incrementedValue}})
+      
+        }
+        catch (err){
+          return next(err)
+        }
+      
+      })
 
 app.use('*', (err, res) => {
     const defaultErr = {
