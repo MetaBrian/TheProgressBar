@@ -42,9 +42,9 @@ app.post('/newBar', async (req, res, next)=>{
         const {_id, incrementedValue }= await req.body
       
         try {
-            console.log(incrementedValue, 'this is incremented value')
-          await Bar.updateOne({_id: _id}, { $set: {startValue: incrementedValue}})
-      
+          console.log(incrementedValue,'this is backend value')
+          await Bar.updateOne({"_id": _id}, { $set: {"startValue": incrementedValue}})
+
         }
         catch (err){
           return next(err)

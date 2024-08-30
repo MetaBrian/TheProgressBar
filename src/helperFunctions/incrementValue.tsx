@@ -7,7 +7,7 @@ function incrementor(_id: string, value: number) {
             incrementedValue:value
         })
     }).catch(error => console.log(error))
-
+    console.log('incrementing', value)
 }
 
 export default incrementor;
