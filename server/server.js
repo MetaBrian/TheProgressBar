@@ -30,7 +30,6 @@ app.post('/newBar', async (req, res, next)=>{
     const {title, startValue, endValue, category} = req.body;
 
     try {
-      console.log(category, 'this is req category')
         Bar.create({title:title, startValue:startValue, endValue:endValue, category:category})
     }
     catch (err){
