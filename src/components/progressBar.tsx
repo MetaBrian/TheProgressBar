@@ -1,86 +1,145 @@
 import { useState } from "react";
-import incrementor from "../helperFunctions/incrementValue";
+import adjuster from "../helperFunctions/incrementValue";
+import deleteBar from "../helperFunctions/deleteBar";
 
 function ProgressBar(props){
     const [value, setValue] = useState(props.startValue)
-    const [counter, setCounter] = useState(0)
     const [backG, setBackG] = useState('progressBar')
 
-
-
+    
+    
     return (
        <div className='barBlock'>
+        
+        <div className='buttonBlock'>
+            <button className='decrementButtons' onClick={()=>{
 
-        <button className='barButtons' id = 'decrementButton'onClick={()=>{
-            if (value === 1){
-                document.getElementById('decrementButton').disabled=true
+
+                if (value > 0){
+                setValue(val=>val-1);
+                adjuster(props.id, value-1);
                 }
 
-            setValue(val=>val-1);
+                if ((100*value/props.endValue) >= 0 && (100*value/props.endValue) < 33 ){
+                    setBackG('redBar')
+                }
+                else if ((100*value/props.endValue) >= 33 && (100*value/props.endValue) < 66){
+                    setBackG('yellowBar')
+                }
+                else if((100*value/props.endValue) >= 66){
+                    setBackG('greenBar')
+                }
+            }}>-1</button>
+
+             <button className='decrementButtons'  onClick={()=>{
 
 
-            }}>-</button>
+                if (value >= 10){
+                setValue(val=>val-10);
+                adjuster(props.id, value-10);
+                }
+
+                if ((100*value/props.endValue) >= 0 && (100*value/props.endValue) < 33 ){
+                    setBackG('redBar')
+                }
+                else if ((100*value/props.endValue) >= 33 && (100*value/props.endValue) < 66){
+                    setBackG('yellowBar')
+                }
+                else if((100*value/props.endValue) >= 66){
+                    setBackG('greenBar')
+                }
+            }}>
+                
+            -10</button>
+
+            <button className='decrementButtons'  onClick={()=>{
+
+
+if (value >= 20){
+setValue(val=>val-20);
+adjuster(props.id, value-20);
+}
+
+if ((100*value/props.endValue) >= 0 && (100*value/props.endValue) < 33 ){
+    setBackG('redBar')
+}
+else if ((100*value/props.endValue) >= 33 && (100*value/props.endValue) < 66){
+    setBackG('yellowBar')
+}
+else if((100*value/props.endValue) >= 66){
+    setBackG('greenBar')
+}
+}}>-20</button>
+        </div>
+        
 
 
         <div className={backG}>
             <h3>{props.title}</h3>
-            <br/>
-            <h3>{value}%</h3>
+            <h3>{100*value/props.endValue}%</h3>
+            <h3>{value}/{props.endValue}</h3>
+
         </div>
 
-        <button className='barButtons' onClick={()=>{
-
-            incrementor(props.id, value+1)
-            setValue(value+1);
-
-            if (value > 0 ){
+<div className='buttonBlock'>
+        <button className='incrementButtons' onClick={()=>{
+    if (value < props.endValue){
+        adjuster(props.id, value+1)
+        setValue(value+1);
+        }
+            if ((100*value/props.endValue) >= 0 && (100*value/props.endValue) < 33 ){
                 setBackG('redBar')
             }
-            if (value > 33){
+            else if ((100*value/props.endValue) >= 33 && (100*value/props.endValue) < 66){
                 setBackG('yellowBar')
             }
-            if (value > 67){
+            else if((100*value/props.endValue) >= 66){
                 setBackG('greenBar')
             }
 
-        }}>+</button>
+        }}>+1</button>
         
-        <button className='barButtons' onClick={()=>{
+        <button className='incrementButtons' onClick={()=>{
 
-    incrementor(props.id, value+10)
-        setValue(value+10);
+if (value <= (props.endValue-10)){
+    adjuster(props.id, value+10)
+    setValue(value+10);
+    }
 
-if (value > 0){
+if ((100*value/props.endValue) > 0){
     setBackG('redBar')
 }
-if (value > 33){
+if ((100*value/props.endValue) > 33){
     setBackG('yellowBar')
 }
-if (value > 67){
+if ((100*value/props.endValue) > 66){
     setBackG('greenBar')
 }
 
 }}>+10</button>
 
-<button className='barButtons' onClick={()=>{
 
-incrementor(props.id, value+20)
+
+<button className='incrementButtons' onClick={()=>{
+  //fastest increment  
+    if (value <= (props.endValue-20)){
+    adjuster(props.id, value+20)
     setValue(value+20);
-
-if (value > 0){
-setBackG('redBar')
-}
-if (value > 33){
-setBackG('yellowBar')
-}
-if (value > 67){
-setBackG('greenBar')
-}
+    }
+    if ((100*value/props.endValue) > 0){
+        setBackG('redBar')
+    }
+    if ((100*value/props.endValue) > 33){
+        setBackG('yellowBar')
+    }
+    if ((100*value/props.endValue) > 66){
+        setBackG('greenBar')
+    }
 
 }}>+20</button>
-
-
-        <button onClick={()=>{incrementor(props.id, 0); setValue(0); setBackG('progressBar')}}>RESET</button>
+ <button className='decrementButtons'onClick={()=>{adjuster(props.id, 0); setValue(0); setBackG('progressBar')}}>RESET</button>
+ <button className="decrementButtons" onClick={()=>{deleteBar(props.id)}}>DELETE</button>
+</div>
         </div> 
     )
 }

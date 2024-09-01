@@ -1,4 +1,4 @@
-function incrementor(_id: string, value: number) {
+function adjuster(_id: string, value: number) {
     fetch('http://localhost:8080/incrementBar', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -7,7 +7,6 @@ function incrementor(_id: string, value: number) {
             incrementedValue:value
         })
     }).catch(error => console.log(error))
-    console.log('incrementing', value)
 }
 
-export default incrementor;
+export default adjuster;

@@ -7,7 +7,6 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .navBar{
@@ -60,43 +59,78 @@ body {
 }
 
 .progressBar{
-    height: 100%;
-    width: 70%;
+    height: 80%;
+    width: 50vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .redBar{
-    height: 100%;
-    width: 70%;
+    height: 80%;
+    width: 50vw;
     display: flex;
     background-color: red;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .yellowBar{
     height: 100%;
-    width: 70%;
+    width: 50vw;
     display: flex;
     background-color: orange;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .greenBar{
     height: 100%;
-    width: 70%;
+    width: 50vw;
     display: flex;
     background-color: limegreen;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .barBlock{
-    width: 100%;
-    height: 20%;
+    width: 100vw;
+    height: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
-.barButtons{
-    width: 15%;
+.buttonBlock{
+    width: 20vw;
     height: 100%;
-    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: groove;
+    border-radius: 1vh;
+    border-color: black;
+}
+
+.decrementButtons{
+    width: 5vw;
+    height: 30%;
+    background-color: red;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.incrementButtons{
+    width: 5vw;
+    height: 30%;
+    background-color: limegreen;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .createBars{

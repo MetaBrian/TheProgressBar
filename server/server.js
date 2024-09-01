@@ -38,7 +38,7 @@ app.post('/newBar', async (req, res, next)=>{
 
     })
     
-    app.post('/incrementBar', async (req, res, next) => {
+app.post('/incrementBar', async (req, res, next) => {
         const {_id, incrementedValue }= await req.body
       
         try {
@@ -51,6 +51,20 @@ app.post('/newBar', async (req, res, next)=>{
         }
       
       })
+
+app.post ('/deleteBar', async (req, res, next) =>{
+  const _id = await req.body
+  
+  try {
+    await console.log(_id, 'this is delete backend id')
+    await Bar.deleteOne({
+      "_id": _id
+    })
+  }
+    catch(err){
+      return next(err)
+    }
+  })
 
 app.use('*', (err, res) => {
     const defaultErr = {
