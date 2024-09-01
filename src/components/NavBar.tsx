@@ -7,6 +7,7 @@ function NavBar() {
     return (
     
         <div className='navBar'>
+            <h1>TheProgressBar</h1>
             <Link to='/' className='navLinks'>
                 <h2>Home</h2>
             </Link>

@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const barSchema  = new Schema({
     title: {type: String, required: true},
     startValue: {type: Number, required: true, minimum:0 },
-    endValue: {type: Number, required: true, minimum: 1}
+    endValue: {type: Number, required: true, minimum: 1},
+    category: {type: String}
 })
 
 const Bar = mongoose.model("Bar", barSchema);

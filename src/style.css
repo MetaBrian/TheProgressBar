@@ -14,7 +14,12 @@ body {
     width: 100vw;
     display: flex;
     justify-content: space-around;
-    background-color: lime;
+    border-color: limegreen;
+    border-radius: 1vw;
+    border-style:groove;
+    color: limegreen;
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
 }
 
 .navLinks{
@@ -24,7 +29,7 @@ body {
     font-family: 'Permanent Marker', cursive;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: limegreen;
 }
 
 .navLinks:hover{
@@ -35,10 +40,12 @@ body {
 .footer{
     height: 8vh;
     width: 100vw;
-    background-color: lime;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-style: groove;
+    border-color: limegreen;
+    border-radius: 1vw;
 
 }
 
@@ -47,7 +54,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Permanent Marker', cursive;
-    color: white;
+    color: limegreen;
     height: 100%;
     width: 30%;
 }
@@ -59,7 +66,7 @@ body {
 }
 
 .progressBar{
-    height: 80%;
+    height: 70%;
     width: 50vw;
     display: flex;
     flex-direction: column;
@@ -69,7 +76,7 @@ body {
 }
 
 .redBar{
-    height: 80%;
+    height: 70%;
     width: 50vw;
     display: flex;
     background-color: red;
@@ -80,7 +87,7 @@ body {
 }
 
 .yellowBar{
-    height: 100%;
+    height: 70%;
     width: 50vw;
     display: flex;
     background-color: orange;
@@ -91,7 +98,7 @@ body {
 }
 
 .greenBar{
-    height: 100%;
+    height: 70%;
     width: 50vw;
     display: flex;
     background-color: limegreen;
@@ -99,6 +106,18 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Permanent Marker', cursive;
+}
+
+.entireBar{
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+    border-radius: 1vw;
+    border-style: groove;
 }
 
 .barBlock{
@@ -109,14 +128,11 @@ body {
 }
 
 .buttonBlock{
-    width: 20vw;
+    width: 25vw;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-style: groove;
-    border-radius: 1vh;
-    border-color: black;
+    justify-content: space-between;
 }
 
 .decrementButtons{
@@ -155,6 +171,10 @@ justify-content: center;
     height: 6vh;
     width: 10vw;
     font-family: 'Permanent Marker', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #barForm{
