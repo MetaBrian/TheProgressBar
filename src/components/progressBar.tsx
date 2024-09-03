@@ -75,9 +75,11 @@ else if((100*value/props.endValue) >= 66){
 
 
         <div className='entireBar'>
+            <div className="barContent">
             <h3>{props.title}</h3>
-            <br/>
             <h3>{props.category}</h3>
+            </div>
+        
             <div className={backG}>
             <h3>{100*value/props.endValue}%</h3>
             <h3>{value}/{props.endValue}</h3>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from "../components/progressBar";
 
 
 function BarDisplay(){
