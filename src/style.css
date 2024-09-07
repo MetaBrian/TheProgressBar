@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.barDisplay, .errorPage{
+.barDisplay, .errorPage, .homePage{
     height: 84vh;
     width: 100vw;
     display: flex;

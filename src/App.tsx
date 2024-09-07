@@ -4,6 +4,7 @@ import CreateBar from './containers/CreateBar'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import ErrorPage from './containers/ErrorPage'
+import HomePage from './containers/HomePage'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
 
       <NavBar/>
         <Routes>
-          <Route path='/' element={<CreateBar></CreateBar>}/>
+          <Route path='/' element={<HomePage></HomePage>}/>
+          <Route path='/createBars' element={<CreateBar></CreateBar>}/>
           <Route path='/displayBars' element = {<BarDisplay></BarDisplay>}/>
           <Route path='*' element={<ErrorPage/>}/>
         </Routes>
