@@ -6,7 +6,7 @@ function EditBar (){
     const initialBar = useLocation().state;
     console.log(initialBar)
 
-    return (
+    return ( 
         <div>
             <form>
                 <input id='editTitle' placeholder={initialBar.title}></input>

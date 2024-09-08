@@ -37,6 +37,19 @@ app.post('/newBar', async (req, res, next)=>{
     }
 
     })
+
+  app.post('/editBar', async (req, res, next)=>{
+    const {_id, title, startValue, endValue, category} = req.body;
+    console.log (_id, title, startValue, endValue, category, 'this is editBar')
+
+    try {
+      await Bar.updateOne({_id}, {title, startValue, endValue, category})
+    }
+    catch (err){
+      return next(err)
+    }
+
+  })
     
 app.post('/incrementBar', async (req, res, next) => {
         const {_id, incrementedValue }= await req.body

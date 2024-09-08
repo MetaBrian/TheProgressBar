@@ -1,8 +1,10 @@
 import { useState } from "react";
 import adjuster from "../helperFunctions/incrementValue";
 import deleteBar from "../helperFunctions/deleteBar";
+import { Link } from "react-router-dom";
 
 function ProgressBar(props){
+
     const [value, setValue] = useState(props.startValue)
     const [backG, setBackG] = useState('progressBar')
 
@@ -12,7 +14,7 @@ function ProgressBar(props){
        <div className='barBlock'>
         
         <div className='buttonBlock'>
-        <button className='decrementButtons' endValue={props.endValue}> EDIT</button>
+            <Link className='decrementButtons' to='/editBars' state={{title:props.title, startValue:props.startValue, endValue: props.endValue, category: props.category, _id:props.id}}>editBar</Link>
             <button className='decrementButtons' onClick={()=>{
 
 
@@ -148,7 +150,7 @@ if ((100*value/props.endValue) > 66){
  <button className='decrementButtons'onClick={()=>{adjuster(props.id, 0); setValue(0); setBackG('progressBar')}}>RESET</button>
  <button className="decrementButtons" onClick={()=>{deleteBar(props.id)}}>DELETE</button>
 
-</div>
+            </div>
         </div> 
     )
 }
