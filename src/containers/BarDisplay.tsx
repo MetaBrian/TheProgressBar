@@ -25,7 +25,7 @@ function BarDisplay(){
 
   const content = [];
     for (let i=0; i<bars.length;i++){
-      console.log(bars, 'this is category')
+      // console.log(bars, 'this is category')
       const component = <ProgressBar key={bars[i]._id} style={style} id={bars[i]._id} setStyle={setStyle} title={bars[i].title} 
       startValue={bars[i].startValue} endValue={bars[i].endValue} category={bars[i].category}
  

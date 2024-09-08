@@ -7,7 +7,7 @@ function EditBar (){
     console.log(initialBar)
 
     return ( 
-        <div>
+        <div className='editBarDisplay'>
             <form>
                 <input id='editTitle' placeholder={initialBar.title}></input>
                 <input id='editStart' placeholder={initialBar.startValue}></input>

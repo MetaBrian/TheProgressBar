@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.barDisplay, .errorPage, .homePage{
+.barDisplay, .errorPage, .homePage, .editBarDisplay{
     height: 84vh;
     width: 100vw;
     display: flex;
@@ -168,6 +168,7 @@ body {
     display: flex;
 justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 84vh;
     width: 100vw;
     font-family: 'Permanent Marker', cursive;
@@ -194,7 +195,6 @@ justify-content: center;
 
 #barForm{
     display: flex;
-    justify-content: space-around;
     align-items: center;
     height: 50vh;
     width: 50vw;

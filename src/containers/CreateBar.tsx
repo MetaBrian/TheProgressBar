@@ -2,8 +2,7 @@ import submitBar from "../helperFunctions/submitBar";
 import { useState } from "react";
 
 
-//make the submit button a link to display all with the new bar displaying as well
-
+//have failure to submit a bar reflect in the UI
 
 
 function CreateBar () {
@@ -14,6 +13,8 @@ function CreateBar () {
         <div className='createBars'>
             <div>
                 {(checker) ? 'Successfully created a Bar': ""}
+            
+                {/* {(!checker) ? 'Failed to create Bar': ""} */}
             </div>
 
            <form id='barForm'>
@@ -25,8 +26,9 @@ function CreateBar () {
                 <button id='submitBar' type='button' onClick={()=>{
                     if (document.getElementById('barTitle').value && parseInt(document.getElementById('barMinimum').value && parseInt(document.getElementById('barMaximum').value))){
                     submitBar(document.getElementById('barTitle').value, parseInt(document.getElementById('barMinimum').value), parseInt(document.getElementById('barMaximum').value), document.getElementById('barCategory').value);
-                    setChecker(!checker); 
+                    setChecker(true); 
                     }
+                    else {setChecker(false)}
                 }}><h1>Submit!</h1></button>
            </form> 
 
