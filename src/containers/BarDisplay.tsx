@@ -6,6 +6,7 @@ function BarDisplay(){
   
   const [bars, setBars] = useState([])
   const [style, setStyle] = useState('red')
+  const defaultText = 'You have no progress bars!'
 
   useEffect(()=> {
     fetchBars();
@@ -37,7 +38,7 @@ function BarDisplay(){
   return(
 
       <div className="barDisplay">
-        { (content.length !== 0) ? content : <h1>You Have no bars!</h1>}
+        { (content[0]) ? content : <h1>{defaultText}</h1>}
       </div>  
     )
 

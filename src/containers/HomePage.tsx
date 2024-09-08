@@ -1,11 +1,11 @@
 function HomePage (){
 
     const userName = 'MetaBrian';
-    //use terniary once userName can be collected at app startup
+    //have the userName reflect LogIn username
 
     return (
         <div className='homePage'>
-            <h2>Welcome {userName}!</h2>
+            <h2>Welcome {userName ? userName: ''}!</h2>
         </div>
     )
 }
