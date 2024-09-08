@@ -12,6 +12,7 @@ function ProgressBar(props){
        <div className='barBlock'>
         
         <div className='buttonBlock'>
+        <button className='decrementButtons' endValue={props.endValue}> EDIT</button>
             <button className='decrementButtons' onClick={()=>{
 
 
@@ -146,6 +147,7 @@ if ((100*value/props.endValue) > 66){
 }}>+20</button>
  <button className='decrementButtons'onClick={()=>{adjuster(props.id, 0); setValue(0); setBackG('progressBar')}}>RESET</button>
  <button className="decrementButtons" onClick={()=>{deleteBar(props.id)}}>DELETE</button>
+
 </div>
         </div> 
     )

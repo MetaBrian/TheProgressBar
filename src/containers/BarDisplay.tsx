@@ -35,8 +35,9 @@ function BarDisplay(){
 
 
   return(
+
       <div className="barDisplay">
-        {content}
+        { (content.length !== 0) ? content : <h1>You Have no bars!</h1>}
       </div>  
     )
 

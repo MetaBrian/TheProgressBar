@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-//use the logo as the home page link
 
 function NavBar() {
 
