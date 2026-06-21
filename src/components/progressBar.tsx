@@ -7,7 +7,6 @@ function ProgressBar(props){
 
     const [value, setValue] = useState(props.startValue)
     const [backG, setBackG] = useState('progressBar')
-
     
     
     return (
@@ -84,7 +83,7 @@ else if((100*value/props.endValue) >= 66){
             </div>
         
             <div className={backG}>
-            <h3>{100*value/props.endValue}%</h3>
+            <h3>{Math.floor( value/props.endValue * 10000)/100 }%</h3>
             <h3>{value}/{props.endValue}</h3>
             </div>
             
