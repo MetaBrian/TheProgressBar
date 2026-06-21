@@ -24,10 +24,15 @@ function CreateBar () {
                 <input id='barCategory' type='text' placeholder='Category' className="createInputs"/>
                 
                 <button id='submitBar' type='button' onClick={()=>{
+                    if (document.getElementById('barMinimum').value == false){
+                        document.getElementById('barMinimum').value = 0
+                    }
+
                     if (document.getElementById('barTitle').value && parseInt(document.getElementById('barMinimum').value && parseInt(document.getElementById('barMaximum').value))){
                     submitBar(document.getElementById('barTitle').value, parseInt(document.getElementById('barMinimum').value), parseInt(document.getElementById('barMaximum').value), document.getElementById('barCategory').value);
                     setChecker(true); 
                     }
+                    
                     else {setChecker(false)}
                 }}><h1>Submit!</h1></button>
            </form> 
