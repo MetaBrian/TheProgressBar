@@ -6,6 +6,7 @@ body {
     height: 84vh;
     width: 100vw;
     display: flex;
+    overflow: scroll;
     flex-direction: column;
     justify-content: center;
     font-family: 'Permanent Marker', cursive;
