@@ -26,6 +26,8 @@ app.get('/getBars', async(req, res, next) => {
     catch(err){return next (err)}
 })
 
+//app.get(')
+
 app.post('/newBar', async (req, res, next)=>{
     const {title, startValue, endValue, category} = req.body;
 

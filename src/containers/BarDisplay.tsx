@@ -12,6 +12,11 @@ function BarDisplay(){
     fetchBars();
   },[]);
 
+  //const filterBars = async() =>{
+  // try {
+  //  const response = await fetch("")}
+  //  }
+
 
   const fetchBars = async() => {
     try { 
@@ -23,6 +28,16 @@ function BarDisplay(){
     console.log(error, 'error fetching bars')
   }
   }
+
+  //<form>
+  //  <input id='filterCategory' type='form' placeholder='Filter by Category'/>
+  //  <button id='submitBar' type='button' onClick={()=>{
+  //      if (document.getElementById('filterCategory').value){
+  //        
+  //      }
+  //     }}>
+  // </button>
+  //</form>
 
   const content = [];
     for (let i=0; i<bars.length;i++){
